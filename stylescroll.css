@@ -1,0 +1,28 @@
+/* estado inicial: invisível e levemente abaixo */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+/* quando aparece no scroll */
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* remover especificidades antigas */
+.scroll-reveal-left,
+.scroll-reveal-right,
+.scroll-reveal-scale {
+    opacity: 0;
+    transform: translateY(20px); /* unifica tudo */
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.scroll-reveal-left.active,
+.scroll-reveal-right.active,
+.scroll-reveal-scale.active {
+    opacity: 1;
+    transform: translateY(0);
+}

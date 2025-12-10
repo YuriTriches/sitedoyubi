@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f6f3e9;
+    color: #1a1a1a;
+}
+
+
+/* HEADER ------------------------------------------------- */
+
+header {
+    width: 100%;
+    padding: 1.5rem 3rem;
+    background: #f6f3e9;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid #ddd;
+}
+
+header .container {
+    width: 100%;
+    max-width: 1250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: -1px;
+}
+
+/* MENU */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.6;
+}
+
+/* HERO ---------------------------------------------------- */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    max-width: 1400px;
+    margin: auto;
+    padding: 2rem 3rem;
+    gap: 2.5rem;
+}
+
+/* LADO ESQUERDO (FOTO) */
+
+.hero-left {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;               /* força border-radius */
+    border-radius: 22px;            /* pega nos 4 cantos agora */
+    display: flex;
+    justify-content: center;        /* centraliza */
+    align-items: center;
+    padding-left: 20px;             /* desloca um pouco da parede esquerda */
+}
+
+.hero-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;         /* garante o mesmo arredondamento */
+}
+
+/* LADO DIREITO */
+
+.hero-right {
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 70px;             /* menos exagerado, mais equilibrado */
+    background: #faf7ed;
+    border-radius: 16px;
+    
+    margin-top: -30px;   /* ⬆️ sobe o bloco */
+}
+
+/* Caixinha do produto */
+
+.product-box {
+    background: #ece9dd;
+    padding: 1rem;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 420px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.product-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Texto principal */
+
+.hero-title {
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.hero-title span {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 2.9rem;
+}
+
+/* Botão */
+
+.btn {
+    background: transparent;
+    border: 2px solid #1a1a1a;
+    padding: 0.8rem 2.3rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: fit-content;
+    border-radius: 20px;
+}
+
+.btn:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 1rem;
+    }
+
+    .hero-right {
+        padding: 3rem 1.5rem;
+        text-align: center;
+        align-items: center;
+        padding-left: 0;
+    }
+
+    .product-box {
+        width: 100%;
+    }
+}
+.product-subtext {
+    margin-top: 0.7rem;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #4a463f;
+    letter-spacing: 0.8px;
+    text-align: center;
+    opacity: 0.8;
+}

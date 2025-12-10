@@ -1,0 +1,193 @@
+/**************************************************
+    FINAL CTA SECTION + FOOTER (COM ANIMAÇÕES)
+**************************************************/
+html, body {
+   
+ 
+
+}
+body {
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+/* --- Scroll Fade Animations --- */
+.final-reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.9s ease;
+}
+
+.final-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/******************************************
+    SEÇÃO FINAL – CHAMADA PARA AÇÃO
+******************************************/
+.final-section {
+    background: #1f1d1d;
+    padding: 120px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    gap: 40px;
+    border-top: 2px solid rgba(31, 30, 30, 0.08);
+    border-radius: 50px;
+ 
+}
+
+.final-left {
+    max-width: 530px;
+}
+
+.final-left h2 {
+    font-size: 48px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.final-left h2 span {
+    color: #ff4d4d;
+}
+
+.final-left p {
+    margin: 18px 0 28px;
+    font-size: 18px;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+/* Botão */
+.final-btn {
+    display: inline-block;
+    background: #ff4d4d;
+    color: #fff;
+    padding: 16px 38px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: 0.3s ease;
+}
+
+.final-btn:hover {
+    background: #aa230c;
+    transform: translateY(-4px);
+}
+
+/* Imagem */
+.final-right img {
+    width: 420px;
+    filter: drop-shadow(0 0 12px rgba(211, 13, 13, 0.4));
+}
+
+/******************************************
+                FOOTER
+******************************************/
+.main-footer {
+    background: #0d0d0d;
+    padding: 70px 8% 45px;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    border-radius: 50px;
+}
+
+.main-footer h3 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.footer-subtitle {
+    opacity: 0.75;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+/* Links */
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-bottom: 25px;
+}
+
+.footer-links a {
+    color: #fff;
+    opacity: 0.75;
+    transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #ff4dc4;
+}
+
+/* Ícones */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.footer-socials a {
+    color: #fff;
+    opacity: 0.7;
+    transition: 0.25s ease;
+}
+
+.footer-socials a:hover {
+    opacity: 1;
+    transform: scale(1.18);
+}
+
+/* Copyright */
+.footer-copy {
+    opacity: 0.55;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/********************************
+        RESPONSIVO
+********************************/
+@media (max-width: 900px) {
+    .final-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .final-right img {
+        width: 300px;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 28px;       /* espaçamento igual ao da sua imagem */
+    margin-top: 10px;
+}
+
+.footer-icons a img {
+    width: 28px;     /* tamanho parecido com emoji */
+    height: 28px;
+    opacity: 0.9;
+    transition: 0.3s ease;
+}
+
+.footer-icons a img:hover {
+    transform: translateY(-3px);
+    opacity: 1;
+}
+

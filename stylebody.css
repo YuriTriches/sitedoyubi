@@ -1,0 +1,236 @@
+/* -------------------------------------------
+   PERSONA SECTION — estilo elegante
+   Combina com seu site clean / chic
+------------------------------------------- */
+html, body {
+    
+     
+ 
+}
+body {
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.p3r-container {
+        width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    padding: 60px 20px;
+  margin: 0 auto; /* 🔥 ISSO CENTRALIZA DE VERDADE */
+    background: #f6f3e9; /* bege chique igual teu site */
+    color: #1a1a1a;
+    font-family: 'Inter', sans-serif;
+}
+
+/* -------------------------------------------
+   Títulos elegantes
+------------------------------------------- */
+
+.p3r-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    font-family: "Playfair Display", serif;
+    margin-bottom: 18px;
+
+    letter-spacing: -0.5px;
+    line-height: 2.7rem;
+}
+
+/* -------------------------------------------
+   Texto clean
+------------------------------------------- */
+
+.p3r-text-group p {
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: #333;
+    margin-bottom: 14px;
+}
+
+.p3r-text-group p:nth-of-type(2),
+.p3r-text-group p:nth-of-type(3) {
+    opacity: 0.8;
+}
+
+/* -------------------------------------------
+   Imagens estilo premium
+------------------------------------------- */
+
+.p3r-image {
+    border-radius: 18px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+/* degrade suave com vibe elegante */
+.p3r-intro-top-image {
+    height: 320px;
+  background-image: url("../images/teste2.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.p3r-intro-top-image2 {
+    height: 320px;
+  background-image: url("../images/teste3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.p3r-intro-top-image3 {
+    height: 320px;
+  background-image: url("../images/teste4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.p3r-intro-bottom-image {
+    height: 340px;
+    background: linear-gradient(135deg, #dcd7c9, #cfc9bb);
+}
+
+/* -------------------------------------------
+   Botão elegante (igual ao "Chat with Me")
+------------------------------------------- */
+
+.p3r-button {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #1a1a1a;
+    color: #1a1a1a;
+
+    padding: 0.8rem 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+}
+
+.p3r-button:hover {
+    background: #1a1a1a;
+    color: #fff;
+}
+
+/* -------------------------------------------
+   Responsivo elegante
+------------------------------------------- */
+
+@media (max-width: 900px) {
+    .p3r-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .p3r-intro-bottom-image {
+        margin-top: 0;
+    }
+}
+
+/* SEÇÃO SOBRE MIM — CENTRALIZADA NA TELA */
+.sobre-mim {
+    width: 100%;
+    height: 100vh;                    /* ocupa a tela inteira */
+    display: flex;
+    justify-content: center;          /* centraliza horizontal */
+    align-items: center;              /* centraliza vertical */
+    background: #faf7ed;
+    padding: 0;
+}
+
+.sobre-container {
+    width: 80%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+/* TÍTULOS E TEXTO */
+.sobre-title {
+    font-size: 2.8rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: #1c1c1c;
+    letter-spacing: -1px;
+}
+
+.sobre-text {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto 3rem auto;
+    line-height: 1.6;
+}
+
+/* CARDS */
+.sobre-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.sobre-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 18px;
+    width: 300px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    text-align: left;
+}
+
+.sobre-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: .7rem;
+}
+
+/* SKILLS DE IDIOMA */
+.sobre-subtitle {
+    font-size: 2rem;
+    margin: 2rem 0 1.5rem 0;
+    font-weight: 700;
+}
+
+.lang-skills {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.lang-item {
+    margin-bottom: 1.4rem;
+    text-align: left;
+}
+
+.lang-item span {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.lang-bar {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
+    margin-top: .5rem;
+    overflow: hidden;
+}
+
+.lang-fill {
+    height: 100%;
+}
+
+/* CORES DAS SKILLS */
+.green { background: #3ecf5c; width: 55%; }
+.yellow { background: #f2d14d; width: 20%; }
+

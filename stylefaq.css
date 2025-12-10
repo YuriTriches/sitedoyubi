@@ -1,0 +1,95 @@
+html, body {
+  
+
+    
+}
+body {
+    position: relative;
+    left: 0;
+    right: 0;
+}
+/* NOVO WRAPPER: Deixa o fundo preto de ponta a ponta */
+.dark-section-wrapper {
+    width: 100%;
+    background-color: #000;
+    /* Adicione padding top/bottom aqui se desejar mais espaço entre as seções */
+}
+
+/* FAQ STYLES (Ajustados para fundo preto) */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #e6e6e6; /* Texto geral claro */
+    font-family: "Inter", sans-serif;
+}
+
+.faq-title {
+    font-size: 1.4rem;
+    color: #b0b0b0; /* Título um pouco mais escuro que o texto */
+    margin-bottom: 40px;
+}
+
+.faq-item {
+    margin-bottom: 25px;
+    /* Linha divisória visível no fundo preto */
+    border-bottom: 1px solid #333; 
+    padding-bottom: 15px;
+}
+
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 0;
+    text-align: left;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #e6e6e6; /* Cor da pergunta */
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.faq-question:hover {
+    color: white; /* Destaque no hover */
+}
+
+/* SKILLS STYLES (Ajustados para fundo preto) */
+.skills-showcase {
+    max-width: 1000px; /* Ajuste o max-width conforme a necessidade do seu grid */
+    margin: 0 auto;
+    padding: 40px 20px;
+    color: #e6e6e6; /* Texto geral claro */
+    text-align: center; /* Centraliza o título e subtítulo */
+}
+
+.skills-title {
+    /* Mantenha o estilo que você tem, mas garanta a cor clara */
+    color: white; 
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.skills-subtitle {
+    /* Garanta que o subtítulo seja claro */
+    color: #b0b0b0;
+    margin-bottom: 40px;
+}
+.faq-answer {
+    /* Estado inicial: Altura zero e invisível */
+    max-height: 0; 
+    overflow: hidden;
+    opacity: 0;
+    /* Transição suave para abertura/fechamento */
+    transition: max-height 0.4s ease, opacity 0.3s ease; 
+    margin-top: 0;
+}
+
+.faq-answer.open {
+    /* Estado Aberto: Altura máxima para exibir o conteúdo */
+    max-height: 500px; /* Deve ser maior que o conteúdo */
+    opacity: 1;
+    margin-top: 15px;
+}

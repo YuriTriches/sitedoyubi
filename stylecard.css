@@ -1,0 +1,293 @@
+/* ==============================
+   PERSONA CARDS (COMPACTO)
+============================== */
+html, body {
+
+    
+  
+}
+body {
+    position: relative;
+    left: 0;
+    right: 0;
+}
+.persona-cards-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+    background: black;
+}
+
+.persona-card {
+    position: relative;
+    width: 240px;
+    height: 390px;
+    overflow: hidden;
+    border-radius: 15px;
+    background: #000;
+    transition: all 0.7s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.45);
+}
+
+.persona-card:hover {
+    transform: scale(1.09);
+}
+
+.persona-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s ease;
+}
+
+.persona-card:hover img {
+    opacity: 0;
+    transform: translateX(-106%);
+}
+
+.persona-card video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.9s ease;
+}
+
+.persona-card:hover video {
+    opacity: 1;
+}
+
+.persona-overlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(to bottom, transparent, black);
+    opacity: 0;
+    transform: translateY(15%);
+    transition: 0.9s ease;
+}
+
+.persona-card:hover .persona-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.persona-desc {
+    position: absolute;
+    bottom: 15px;
+    padding: 12px;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.7s ease;
+}
+
+.persona-card:hover .persona-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.persona-desc h1 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.persona-desc p {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+/* -------------------------------
+   Título da sessão Persona
+------------------------------- */
+
+.persona-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    letter-spacing: 2px;
+    color: white;
+    text-transform: uppercase;
+
+    background: linear-gradient(90deg, #0048ff, #00bfff, #0048ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(0,150,255,0.4); }
+    50% { text-shadow: 0 0 20px rgba(0,200,255,0.9); }
+    100% { text-shadow: 0 0 10px rgba(0,150,255,0.4); }
+}
+
+/* ============================== 
+   SKILLS SHOWCASE — VERSÃO FINAL
+============================== */
+
+.skills-showcase {
+    padding: 70px 0 90px 0;
+    background: #000;
+}
+
+/* Título Principal */
+.skills-title {
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 18px;
+    letter-spacing: -1px;
+}
+
+/* Linha elegante */
+.skills-divider {
+    width: 70%;
+    max-width: 900px;
+    height: 1px;
+    margin: 0 auto 30px;
+    background: rgba(255,255,255,0.12);
+}
+
+/* Subtítulo */
+.skills-subtitle {
+    text-align: center;
+    font-size: 1.05rem;
+    color: #bcbcbc;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+/* Grid dos cards */
+.skills-grid {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+/* Card individual */
+.skill-card {
+    width: 130px;
+    height: 130px;
+
+    background: #fff;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+    border: 3px solid rgba(255,255,255,0.04);  
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+/* Imagem */
+.skill-card img {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 10px;
+}
+
+/* Nome */
+.skill-card span {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: #222;
+}
+
+
+
+/* ============================================
+   RESPONSIVO — MOBILE
+============================================ */
+
+@media (max-width: 768px) {
+
+    .skills-title {
+        font-size: 2.1rem;
+        margin-bottom: 10px;
+    }
+
+    .skills-divider {
+        width: 85%;
+        margin-bottom: 25px;
+    }
+
+    .skills-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+    }
+
+    .skills-grid {
+        gap: 20px;
+    }
+
+    .skill-card {
+        width: 115px;
+        height: 115px;
+        border-radius: 16px;
+    }
+
+    .skill-card img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .skill-card span {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ============================================
+   MOBILE PEQUENO (até 480px)
+============================================ */
+
+@media (max-width: 480px) {
+
+    .skills-title {
+        font-size: 1.75rem;
+    }
+
+    .skills-grid {
+        gap: 18px;
+    }
+
+    .skill-card {
+        width: 100px;
+        height: 100px;
+    }
+
+    .skill-card img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .skill-card span {
+        font-size: 0.8rem;
+    }
+}
