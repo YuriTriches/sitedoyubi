@@ -72,21 +72,21 @@ body {
 /* degrade suave com vibe elegante */
 .p3r-intro-top-image {
     height: 320px;
-  background-image: url("../images/teste2.png");
+  background-image: url("Images/teste2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .p3r-intro-top-image2 {
     height: 320px;
-  background-image: url("../images/teste3.png");
+  background-image: url("Images/teste3.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 .p3r-intro-top-image3 {
     height: 320px;
-  background-image: url("../images/teste4.png");
+  background-image: url("Images/teste4.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
