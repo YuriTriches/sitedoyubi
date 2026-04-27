@@ -218,7 +218,7 @@ function ProfileContent() {
       </div>
       <div className="c-profile-right">
         <div className="p-eyebrow">// DESENVOLVEDOR</div>
-        <div className="p-name">SEU NOME</div>
+        <div className="p-name">Yuri Triches</div>
         <div className="p-role">FULL-STACK DEVELOPER</div>
         <div className="p-sep" />
 
@@ -256,10 +256,10 @@ function SkillsContent() {
     { cat: "DEX — Ferramentas", items: ["Git","Figma","Vercel","AWS","Linux"] },
   ];
   const bars = [
-    { label: "Frontend", pct: 90, color: "#1535c8" },
-    { label: "Backend",  pct: 75, color: "#1535c8" },
+    { label: "Frontend", pct: 80, color: "#1535c8" },
+    { label: "Backend",  pct: 90, color: "#1535c8" },
     { label: "Design",   pct: 68, color: "#1535c8" },
-    { label: "DevOps",   pct: 55, color: "#1535c8" },
+    { label: "DevOps",   pct: 68, color: "#1535c8" },
   ];
   return (
     <div className="c-skills">
@@ -286,7 +286,7 @@ function SkillsContent() {
       <div className="sk-bar-wrap">
         <div className="sk-bar-label-total">OVERALL RATING</div>
         <div className="sk-bar-track sk-bar-track-main"><div className="sk-bar-fill-main" /></div>
-        <div className="sk-bar-sub">82 / 100 pts</div>
+        <div className="sk-bar-sub">88 / 100 pts</div>
       </div>
     </div>
   );
