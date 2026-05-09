@@ -294,10 +294,10 @@ function SkillsContent() {
 
 function ProjectsContent() {
   const projects = [
-    { n:"Project Alpha", d:"Dashboard SaaS full-stack com analytics em tempo real e autenticação por role.", s:["Next.js","PostgreSQL","Stripe"], href:"#", status:"LIVE" },
-    { n:"Project Beta",  d:"CLI open-source usado por mais de 2k desenvolvedores no mundo todo.",           s:["Node.js","TypeScript"],        href:"#", status:"LIVE" },
-    { n:"Project Gamma", d:"Plataforma e-commerce mobile-first com CMS headless e vitrine customizada.",    s:["React","Shopify"],             href:"#", status:"WIP"  },
-    { n:"Project Delta", d:"Assistente de escrita com IA usando modelo fine-tuned customizado.",            s:["Python","FastAPI","LLM"],      href:"#", status:"LIVE" },
+    { n:"Project", d:"Em Breve.", s:["Next.js","PostgreSQL","Stripe"], href:"#", status:"LIVE" },
+    { n:"Project",  d:"Em Breve.",           s:["Node.js","TypeScript"],        href:"#", status:"LIVE" },
+    { n:"Project", d:"Em Breve",    s:["React","Shopify"],             href:"#", status:"WIP"  },
+    { n:"Project", d:"Em Breve.",            s:["Python","FastAPI","LLM"],      href:"#", status:"LIVE" },
   ];
   return (
     <div className="c-projects">
@@ -337,7 +337,7 @@ function ContactContent() {
         </div>
       ) : (
         <>
-          <div className="ct-intro">&gt; Nova mensagem para: <strong>voce@portfolio.dev</strong></div>
+          <div className="ct-intro">&gt; Nova mensagem para: <strong>yuritriches66@gmail.com</strong></div>
           {(["name","email","msg"] as const).map(k => (
             <div key={k} className="ct-field">
               <label className="ct-label">{k === "name" ? "NOME:" : k === "email" ? "EMAIL:" : "MENSAGEM:"}</label>
