@@ -608,7 +608,7 @@ export default function Page() {
         <style>{css}</style>
         <div className="mob-root">
           <div className="mob-header">
-            <span className="mob-title">portfolio.exe</span>
+            <span className="mob-title">Yuri Triches.exe</span>
             <span className="mob-clock">{time}</span>
           </div>
           <div className="mob-win">
