@@ -224,7 +224,7 @@ function ProfileContent() {
 
         {/* RPG Stats — inspired by Grifo */}
         <div className="rpg-stats">
-          {[["STR","Força de Código","12","+3"],["DEX","Velocidade de Ship","14","+2"],["INT","Arquitetura","20","+8"],["LCK","Bugs em Prod","5","-4"]].map(([s,n,v,b]) => (
+          {[["STR","Código","12","+3"],["DEX","Velocidade","14","+2"],["INT","Arquitetura","20","+8"],["LCK","Bugs","5","-4"]].map(([s,n,v,b]) => (
             <div key={s} className="rpg-stat">
               <div className="rpg-stat-top">
                 <span className="rpg-stat-abbr">{s}</span>
@@ -414,10 +414,10 @@ function NowContent() {
     { emoji:"☕", label:"Café hoje",      val:"3 xícaras (normal)" },
   ];
   const log = [
-    { date:"Abr 2026", ev:"Lançamento do portfolio v2" },
-    { date:"Mar 2026", ev:"Contribuição open-source aceita" },
-    { date:"Fev 2026", ev:"Project Alpha em produção" },
-    { date:"Jan 2026", ev:"Novo cliente: fintech startup" },
+    { date:"Abr 2026", ev:"Em Breve" },
+    { date:"Mar 2026", ev:"Em Breve" },
+    { date:"Fev 2026", ev:"Em Breve" },
+    { date:"Jan 2026", ev:"Em Breve" },
   ];
   return (
     <div className="c-now">
