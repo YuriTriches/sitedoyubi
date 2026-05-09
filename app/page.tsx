@@ -296,7 +296,7 @@ function ProjectsContent() {
   const projects = [
     { n:"Project", d:"Em Breve.", s:["Next.js","PostgreSQL","Stripe"], href:"#", status:"LIVE" },
     { n:"Project",  d:"Em Breve.",           s:["Node.js","TypeScript"],        href:"#", status:"LIVE" },
-    { n:"Project", d:"Em Breve",    s:["React","Shopify"],             href:"#", status:"WIP"  },
+    { n:"Project", d:"Em Breve.",    s:["React","Shopify"],             href:"#", status:"WIP"  },
     { n:"Project", d:"Em Breve.",            s:["Python","FastAPI","LLM"],      href:"#", status:"LIVE" },
   ];
   return (
