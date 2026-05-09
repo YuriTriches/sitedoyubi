@@ -38,7 +38,7 @@ function BootScreen({ onDone }: { onDone(): void }) {
   const [line, setLine] = useState(0);
   const [progress, setProgress] = useState(0);
   const lines = [
-    "PORTFOLIO OS v2.0 — Loading...",
+    "Yuri Triches OS v2.0 — Loading...",
     "Initializing RAM... OK",
     "Loading assets... OK",
     "Starting window manager... OK",
@@ -61,7 +61,7 @@ function BootScreen({ onDone }: { onDone(): void }) {
   return (
     <div className="boot-screen">
       <div className="boot-inner">
-        <div className="boot-logo">PORTFOLIO<span>.EXE</span></div>
+        <div className="boot-logo">Yuri Triches<span>.EXE</span></div>
         <div className="boot-lines">
           {lines.slice(0, line).map((l, i) => <div key={i} className="boot-line">{l}</div>)}
           {line < lines.length && <span className="boot-cursor">_</span>}
@@ -82,7 +82,7 @@ function StartMenu({ onOpen, onClose }: { onOpen(id: WinId): void; onClose(): vo
   return (
     <div className="startmenu" onMouseLeave={onClose}>
       <div className="startmenu-side">
-        <span className="startmenu-brand">PORTFOLIO<br />OS</span>
+        <span className="startmenu-brand">Yuri Triches<br />OS</span>
       </div>
       <div className="startmenu-items">
         {WIN_IDS.map(id => (
