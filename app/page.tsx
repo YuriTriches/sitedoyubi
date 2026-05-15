@@ -240,9 +240,9 @@ function ProfileContent() {
           Construo Websites e Softwares e faço musica.
         </p>
         <div className="p-links">
-          <a href="https://github.com"   target="_blank" rel="noreferrer" className="p-btn">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="p-btn">LinkedIn</a>
-          <a href="/resume.pdf"          target="_blank" rel="noreferrer" className="p-btn p-btn-primary">Currículo ↗</a>
+          <a href="https://github.com/YuriTriches"   target="_blank" rel="noreferrer" className="p-btn">GitHub</a>
+          <a href="https://www.linkedin.com/in/yuri-triches-712815409/" target="_blank" rel="noreferrer" className="p-btn">LinkedIn</a>
+          <a href="#" className="p-btn p-btn-primary" title="Em breve">Currículo ↗</a>
         </div>
       </div>
     </div>
@@ -294,10 +294,10 @@ function SkillsContent() {
 
 function ProjectsContent() {
   const projects = [
-    { n:"Project", d:"Em Breve.", s:["Next.js","PostgreSQL","Stripe"], href:"#", status:"LIVE" },
-    { n:"Project",  d:"Em Breve.",           s:["Node.js","TypeScript"],        href:"#", status:"LIVE" },
-    { n:"Project", d:"Em Breve.",    s:["React","Shopify"],             href:"#", status:"WIP"  },
-    { n:"Project", d:"Em Breve.",            s:["Python","FastAPI","LLM"],      href:"#", status:"LIVE" },
+    { n:"Project 01", d:"Em Breve.", s:["Next.js","PostgreSQL","Stripe"], href:"#", status:"LIVE" },
+    { n:"Project 02", d:"Em Breve.", s:["Node.js","TypeScript"],          href:"#", status:"LIVE" },
+    { n:"Project 03", d:"Em Breve.", s:["React","Shopify"],               href:"#", status:"WIP"  },
+    { n:"Project 04", d:"Em Breve.", s:["Python","FastAPI","LLM"],        href:"#", status:"LIVE" },
   ];
   return (
     <div className="c-projects">
@@ -319,11 +319,23 @@ function ProjectsContent() {
   );
 }
 
+/* ─────────────────────────────────────────────
+   CONTACT 
+───────────────────────────────────────────── */
 function ContactContent() {
   const [sent, setSent] = useState(false);
-  const [form, setForm] = useState({ name:"", email:"", msg:"" });
+  const [form, setForm] = useState({ name:"", msg:"" });
   const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>) =>
     setForm(f => ({ ...f, [k]: e.target.value }));
+
+  const handleSend = () => {
+    if (!form.name.trim() || !form.msg.trim()) return;
+    const text = encodeURIComponent(
+      `Olá Yuri! Me chamo ${form.name}.\n\n${form.msg}`
+    );
+    window.open(`https://wa.me/555499688709?text=${text}`, "_blank");
+    setSent(true);
+  };
 
   return (
     <div className="c-contact">
@@ -331,29 +343,68 @@ function ContactContent() {
         <div className="ct-success">
           <div>
             <div className="ct-ok-icon">✓</div>
-            <div className="ct-ok-title">MENSAGEM ENVIADA!</div>
-            <div className="ct-ok-sub">Responderei o mais breve possível.</div>
+            <div className="ct-ok-title">REDIRECIONANDO...</div>
+            <div className="ct-ok-sub">Abrindo WhatsApp com sua mensagem.</div>
           </div>
         </div>
       ) : (
         <>
-          <div className="ct-intro">&gt; Nova mensagem para: <strong>yuritriches66@gmail.com</strong></div>
-          {(["name","email","msg"] as const).map(k => (
-            <div key={k} className="ct-field">
-              <label className="ct-label">{k === "name" ? "NOME:" : k === "email" ? "EMAIL:" : "MENSAGEM:"}</label>
-              {k === "msg"
-                ? <textarea className="ct-input ct-ta" placeholder="Descreva seu projeto ou oportunidade…" rows={4} value={form.msg} onChange={set("msg")} />
-                : <input className="ct-input" type={k === "email" ? "email" : "text"} placeholder={k === "name" ? "Seu nome completo" : "voce@exemplo.com"} value={form[k]} onChange={set(k)} />
+          <div className="ct-intro">
+            &gt; Nova mensagem para:{" "}
+            <strong className="ct-wa-badge">
+              <span className="ct-wa-icon">📱</span> WhatsApp
+            </strong>
+          </div>
+
+          <div className="ct-field">
+            <label className="ct-label">NOME:</label>
+            <input
+              className="ct-input"
+              type="text"
+              placeholder="Seu nome completo"
+              value={form.name}
+              onChange={set("name")}
+            />
+          </div>
+
+          <div className="ct-field">
+            <label className="ct-label">MENSAGEM:</label>
+            <textarea
+              className="ct-input ct-ta"
+              placeholder="Descreva seu projeto ou oportunidade…"
+              rows={4}
+              value={form.msg}
+              onChange={set("msg")}
+            />
+          </div>
+
+          <div className="ct-wa-preview">
+            <div className="ct-wa-preview-label">// PRÉVIA DA MENSAGEM</div>
+            <div className="ct-wa-preview-box">
+              {form.name || form.msg
+                ? <>
+                    {form.name && <span className="ct-wa-hi">Olá Yuri! Me chamo {form.name}.</span>}
+                    {form.msg  && <span className="ct-wa-body">{"\n"}{form.msg}</span>}
+                  </>
+                : <span className="ct-wa-placeholder">Preencha os campos acima…</span>
               }
             </div>
-          ))}
-          <div className="ct-links">
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="ct-social">GitHub ↗</a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="ct-social">LinkedIn ↗</a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="ct-social">Twitter ↗</a>
           </div>
+
+          <div className="ct-links">
+            <a href="https://github.com/YuriTriches" target="_blank" rel="noreferrer" className="ct-social">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/yuri-triches-712815409/" target="_blank" rel="noreferrer" className="ct-social">LinkedIn ↗</a>
+            <a href="https://www.instagram.com/yuritriches_/" target="_blank" rel="noreferrer" className="ct-social">Instagram ↗</a>
+          </div>
+
           <div className="ct-foot">
-            <button className="ct-btn" onClick={() => setSent(true)}>[ ENVIAR MENSAGEM ]</button>
+            <button
+              className={`ct-btn ct-btn-wa ${(!form.name.trim() || !form.msg.trim()) ? "ct-btn-disabled" : ""}`}
+              onClick={handleSend}
+              disabled={!form.name.trim() || !form.msg.trim()}
+            >
+              <span>📱</span> [ ENVIAR VIA WHATSAPP ]
+            </button>
           </div>
         </>
       )}
@@ -362,43 +413,41 @@ function ContactContent() {
 }
 
 function MusicContent() {
-  const [playing, setPlaying] = useState<number|null>(null);
-  const tracks = [
-    { t:"Lofi Study Session", a:"Playlist Pessoal", d:"2:34:00", genre:"Lo-fi" },
-    { t:"Synthwave Drive",     a:"Playlist Pessoal", d:"1:12:00", genre:"Synth" },
-    { t:"Tokyo Rain",          a:"Playlist Pessoal", d:"0:58:00", genre:"City Pop" },
-    { t:"OST Mode",            a:"Game Soundtracks", d:"3:01:00", genre:"Game" },
-    { t:"Deep Focus",          a:"Playlist Pessoal", d:"2:00:00", genre:"Ambient" },
+  const [active, setActive] = useState(0);
+  const playlists = [
+    { t:"Lofi Hip Hop",      genre:"Lo-fi / Study", embedId:"37i9dQZF1DWWQRwui0ExPn" },
+    { t:"Synthwave & Chill", genre:"Synthwave",      embedId:"37i9dQZF1DX9tPFwdkgISm" },
+    { t:"Tokyo Vibes",       genre:"City Pop",       embedId:"37i9dQZF1DX4hhBMEHxCJW" },
+    { t:"Deep Focus",        genre:"Ambient",        embedId:"37i9dQZF1DWZeKCadgRdKQ" },
+    { t:"Game OST Chill",    genre:"Game Music",     embedId:"37i9dQZF1DX8vIgarOZodz" },
   ];
   return (
     <div className="c-music">
-      <div className="music-player">
-        <div className="music-display">
-          <div className="music-title">{playing !== null ? tracks[playing].t : "— PARADO —"}</div>
-          <div className="music-artist">{playing !== null ? tracks[playing].a : "Selecione uma faixa"}</div>
-          <div className="music-eq">
-            {Array.from({length:12}).map((_,i) => (
-              <div key={i} className={`music-bar ${playing !== null ? "active" : ""}`} style={{ animationDelay:`${i*80}ms`, height:`${8+Math.random()*18}px` }} />
-            ))}
-          </div>
-        </div>
-        <div className="music-controls">
-          <button className="music-btn" onClick={() => setPlaying(p => p !== null ? Math.max(0,p-1) : 0)}>⏮</button>
-          <button className="music-btn music-btn-play" onClick={() => setPlaying(p => p !== null ? null : 0)}>{playing !== null ? "⏸" : "▶"}</button>
-          <button className="music-btn" onClick={() => setPlaying(p => p !== null ? Math.min(tracks.length-1,p+1) : 0)}>⏭</button>
-        </div>
-      </div>
       <div className="music-list">
-        {tracks.map((tr, i) => (
-          <div key={i} className={`music-track ${playing === i ? "active" : ""}`} onClick={() => setPlaying(i)}>
+        {playlists.map((pl, i) => (
+          <div key={pl.embedId} className={`music-track ${active === i ? "active" : ""}`} onClick={() => setActive(i)}>
             <span className="music-num">{String(i+1).padStart(2,"0")}</span>
             <div className="music-info">
-              <span className="music-name">{tr.t}</span>
-              <span className="music-genre">{tr.genre}</span>
+              <span className="music-name">{pl.t}</span>
+              <span className="music-genre">{pl.genre}</span>
             </div>
-            <span className="music-dur">{tr.d}</span>
+            <span className="music-dur">{active === i ? "▶" : "—"}</span>
           </div>
         ))}
+      </div>
+      <div className="music-spotify-wrap">
+        <div className="music-spotify-label">// SPOTIFY PLAYER</div>
+        <iframe
+          key={playlists[active].embedId}
+          src={`https://open.spotify.com/embed/playlist/${playlists[active].embedId}?utm_source=generator&theme=0`}
+          width="100%"
+          height="152"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"
+          className="music-spotify-iframe"
+        />
+        <div className="music-spotify-note">⚠ Conta Spotify necessária para ouvir completo. Sem conta: prévia de 30s.</div>
       </div>
     </div>
   );
@@ -676,18 +725,20 @@ const css = `
   --bg:          #111118;
   --bg2:         #18181f;
   --win-face:    #d8d3c4;
-  --win-inner:   #f2f0e8;   /* brighter inner for easier reading */
+  --win-inner:   #f2f0e8;
   --title-a1:    #1535c8;
   --title-a2:    #2a5cd6;
   --title-blur:  #6b6b7a;
   --bevel-lt:    #f4f0e4;
   --bevel-dk:    #3a3830;
   --bevel-md:    #7a776a;
-  --text:        #0e0c08;   /* darker text = more contrast */
-  --text-muted:  #4a4438;   /* darker muted = still readable */
+  --text:        #0e0c08;
+  --text-muted:  #4a4438;
   --accent:      #1535c8;
   --accent-lite: #2a5cd6;
   --green:       #005500;
+  --wa-green:    #25d366;
+  --wa-dark:     #128c7e;
   --red:         #cc0000;
   --taskbar-h:   44px;
   --font-px:     'Press Start 2P', monospace;
@@ -967,12 +1018,20 @@ html,body{height:100%;overflow:hidden;font-family:var(--font-mn);background:var(
   background:#c8d4e8;color:var(--accent);border:1px solid #90a8cc;font-weight:700;
 }
 
-/* ═══ CONTACT CONTENT ═══ */
+/* ═══ CONTACT CONTENT — WhatsApp ═══ */
 .c-contact{display:flex;flex-direction:column;gap:10px}
 .ct-intro{
   font-family:var(--font-mn);font-size:13px;color:var(--text);
-  border-left:3px solid var(--accent);padding-left:8px;
+  border-left:3px solid var(--wa-green);padding-left:8px;
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
 }
+.ct-wa-badge{
+  display:inline-flex;align-items:center;gap:4px;
+  background:var(--wa-green);color:#fff;
+  font-family:var(--font-px);font-size:7px;padding:3px 7px;
+  border:2px solid var(--wa-dark);letter-spacing:.03em;
+}
+.ct-wa-icon{font-size:13px}
 .ct-field{display:flex;flex-direction:column;gap:4px}
 .ct-label{font-family:var(--font-px);font-size:7.5px;color:var(--text-muted);letter-spacing:.04em}
 .ct-input{
@@ -980,8 +1039,33 @@ html,body{height:100%;overflow:hidden;font-family:var(--font-mn);background:var(
   border:2px inset var(--bevel-md);background:#fff;
   padding:5px 7px;outline:none;resize:none;color:var(--text);
 }
-.ct-input:focus{outline:2px dotted var(--accent);outline-offset:-2px}
+.ct-input:focus{outline:2px dotted var(--wa-green);outline-offset:-2px}
 .ct-ta{min-height:72px}
+
+/* WhatsApp preview bubble */
+.ct-wa-preview{margin-top:2px}
+.ct-wa-preview-label{font-family:var(--font-px);font-size:7px;color:var(--text-muted);margin-bottom:5px}
+.ct-wa-preview-box{
+  background:#dcf8c6;
+  border:1px solid #b0d9a0;
+  border-radius:0 8px 8px 8px;
+  padding:8px 10px;
+  font-family:var(--font-mn);font-size:12px;
+  color:#111;
+  min-height:40px;
+  white-space:pre-wrap;
+  position:relative;
+  box-shadow:1px 1px 3px rgba(0,0,0,.12);
+}
+.ct-wa-preview-box::before{
+  content:'';position:absolute;top:0;left:-8px;
+  border:8px solid transparent;
+  border-right-color:#dcf8c6;border-top-color:#dcf8c6;
+}
+.ct-wa-hi{display:block;font-weight:700}
+.ct-wa-body{display:block;margin-top:4px}
+.ct-wa-placeholder{color:#999;font-style:italic}
+
 .ct-links{display:flex;gap:8px;flex-wrap:wrap}
 .ct-social{
   font-family:var(--font-mn);font-size:13px;color:var(--accent);
@@ -994,11 +1078,14 @@ html,body{height:100%;overflow:hidden;font-family:var(--font-mn);background:var(
   background:var(--win-face);color:var(--text);
   border:2px solid;border-color:var(--bevel-lt) var(--bevel-dk) var(--bevel-dk) var(--bevel-lt);
   letter-spacing:.03em;transition:background .1s;
+  display:flex;align-items:center;gap:7px;
 }
-.ct-btn:hover{background:#c0bcac}
-.ct-btn:active{border-color:var(--bevel-dk) var(--bevel-lt) var(--bevel-lt) var(--bevel-dk);transform:translate(1px,1px)}
+.ct-btn-wa{background:var(--wa-green);color:#fff;border-color:#4ae08a var(--wa-dark) var(--wa-dark) #4ae08a}
+.ct-btn-wa:hover:not(:disabled){background:var(--wa-dark)}
+.ct-btn-wa:active:not(:disabled){border-color:var(--wa-dark) #4ae08a #4ae08a var(--wa-dark);transform:translate(1px,1px)}
+.ct-btn-disabled{opacity:.45;pointer-events:none}
 .ct-success{display:flex;justify-content:center;align-items:center;min-height:130px}
-.ct-ok-icon{font-family:var(--font-px);font-size:26px;color:var(--green);text-align:center}
+.ct-ok-icon{font-family:var(--font-px);font-size:26px;color:var(--wa-green);text-align:center}
 .ct-ok-title{font-family:var(--font-px);font-size:10px;margin:10px 0 4px;color:var(--text);text-align:center}
 .ct-ok-sub{font-family:var(--font-mn);font-size:11px;color:var(--text-muted);text-align:center}
 .ct-success>div{border:2px inset var(--bevel-md);padding:22px 28px;background:var(--win-face)}
@@ -1043,6 +1130,12 @@ html,body{height:100%;overflow:hidden;font-family:var(--font-mn);background:var(
 .music-name{font-family:var(--font-mn);font-size:13px;color:var(--text)}
 .music-genre{font-family:var(--font-mn);font-size:10px;color:var(--text-muted)}
 .music-dur{font-family:var(--font-mn);font-size:11px;color:var(--text-muted)}
+
+/* Spotify embed */
+.music-spotify-wrap{display:flex;flex-direction:column;gap:5px;margin-top:4px}
+.music-spotify-label{font-family:var(--font-px);font-size:7px;color:var(--accent)}
+.music-spotify-iframe{border:2px inset var(--bevel-md);display:block;border-radius:0}
+.music-spotify-note{font-family:var(--font-mn);font-size:10px;color:var(--text-muted);border-left:2px solid var(--bevel-md);padding-left:6px;line-height:1.6}
 
 /* ═══ NOW CONTENT ═══ */
 .c-now{display:flex;flex-direction:column;gap:10px}
